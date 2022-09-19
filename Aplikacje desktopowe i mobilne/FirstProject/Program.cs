@@ -32,7 +32,9 @@ namespace FirstProject
             int liczbaCalkowita = 5;
             double liczbaRzeczywista = 5.6;
 
-   
+            Person firstPerson = new Person();
+
+            firstPerson.ShowInfo();
 
 
         }
