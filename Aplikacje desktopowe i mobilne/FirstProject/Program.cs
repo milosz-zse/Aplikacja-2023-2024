@@ -36,6 +36,27 @@ namespace FirstProject
 
             firstPerson.ShowInfo();
 
+            //Person *person = new Person();
+            //person->ShowInfo();
+            //(*person).ShowInfo();
+
+            Person seconPerson = firstPerson;
+            seconPerson.ShowInfo();
+
+            Person thirdPerson = new Person("Ala", "Kowalska", 18);
+            thirdPerson.ShowInfo();
+
+            seconPerson = thirdPerson;
+            seconPerson.ShowInfo();
+
+            thirdPerson.SetSurname("");
+            thirdPerson.ShowInfo();
+
+            thirdPerson.SetSurname("Nowakowska");
+            thirdPerson.ShowInfo();
+
+            string dana = thirdPerson.GetSurname();
+
 
         }
     }
