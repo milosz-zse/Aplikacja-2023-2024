@@ -4,13 +4,9 @@ namespace FirstProject
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-
-
 
             //c++
             //typ nazwa = wartość;
@@ -53,10 +49,17 @@ namespace FirstProject
             thirdPerson.ShowInfo();
 
             thirdPerson.SetSurname("Nowakowska");
+            thirdPerson.Surname = "Nowakowska";
+
             thirdPerson.ShowInfo();
 
             string dana = thirdPerson.GetSurname();
+            dana = thirdPerson.Surname;
 
+            //thirdPerson.Age = 50;
+            int d = thirdPerson.Age;
+            //thirdPerson.Name = "Adam";
+            string e = thirdPerson.Name;
 
         }
     }

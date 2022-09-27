@@ -9,13 +9,50 @@ namespace FirstProject
     class Person
     {
         private string name;
+        public string Name
+        {
+            protected set
+            {
+                name = value;
+            }
+
+            get
+            {
+                return name;
+            }
+        }
+
         private string surname;
+        public string Surname
+        {
+            set
+            {
+                if (value != "")
+                    surname = value;
+            }
+
+            get
+            {
+                return surname;
+            }
+        }
+
         private int age;
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+        }
+
+        public float Height { get; set; }
+
 
         public Person()
         {
-            name = "Adam";
-            surname = "Nowak";
+            Name = "Adam";
+            Surname = "Nowak";
             age = 30;
         }
 
@@ -33,6 +70,23 @@ namespace FirstProject
             Console.WriteLine($"Nazwisko: {surname}");
             Console.WriteLine($"Wiek: {age}");
             Console.WriteLine("********************************************");
+        }
+
+        public void SetSurname(string newSurname)
+        {
+            if (newSurname != "")
+            {
+                surname = newSurname;
+            }
+            else
+            {
+                //throw new Exception("Nazwisko zakazane");
+            }
+        }
+
+        public string GetSurname()
+        {
+            return surname;
         }
     }
 }

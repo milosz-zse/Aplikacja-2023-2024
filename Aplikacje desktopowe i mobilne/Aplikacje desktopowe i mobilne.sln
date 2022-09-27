@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstProject", "FirstProject\FirstProject.csproj", "{00FD0DC4-9613-4F38-AEEE-26AC1DB93BB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstProject", "FirstProject\FirstProject.csproj", "{00FD0DC4-9613-4F38-AEEE-26AC1DB93BB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassingParametersToMethod", "PassingParametersToMethod\PassingParametersToMethod.csproj", "{A97CB8A0-19E8-42F0-956D-BFFE7E9B2FFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{00FD0DC4-9613-4F38-AEEE-26AC1DB93BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00FD0DC4-9613-4F38-AEEE-26AC1DB93BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00FD0DC4-9613-4F38-AEEE-26AC1DB93BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97CB8A0-19E8-42F0-956D-BFFE7E9B2FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97CB8A0-19E8-42F0-956D-BFFE7E9B2FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97CB8A0-19E8-42F0-956D-BFFE7E9B2FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97CB8A0-19E8-42F0-956D-BFFE7E9B2FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
