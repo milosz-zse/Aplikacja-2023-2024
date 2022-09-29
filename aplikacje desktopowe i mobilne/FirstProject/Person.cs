@@ -9,15 +9,50 @@ namespace FirstProject
     class Person
     {
         private string name;
-        private string surname;
-        private int age;
+        public string Name
+        {
+            protected set
+            {
+                name = value;
+            }
 
+            get
+            {
+                return name;
+            }
+        }
+
+        private string surname;
+        public string Surname
+        {
+            set
+            {
+                if (value != "")
+                    surname = value;
+            }
+
+            get
+            {
+                return surname;
+            }
+        }
+
+        private int age;
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+        }
+
+        public float Height { get; set; }
 
 
         public Person()
         {
-            name = "Adam";
-            surname = "Nowak";
+            Name = "Adam";
+            Surname = "Nowak";
             age = 30;
         }
 

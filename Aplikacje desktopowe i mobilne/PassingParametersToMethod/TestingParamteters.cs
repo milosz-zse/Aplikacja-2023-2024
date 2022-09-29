@@ -8,6 +8,9 @@ namespace PassingParametersToMethod
 {
     class TestingParamteters
     {
+        public void Test1()
+        {
 
+        }
     }
 }
