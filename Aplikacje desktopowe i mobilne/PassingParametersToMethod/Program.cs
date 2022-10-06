@@ -8,7 +8,8 @@ namespace PassingParametersToMethod
         {
             TestingParamteters testingParamteters = new TestingParamteters();
             //testingParamteters.Test1();
-            testingParamteters.Test2();
+            //testingParamteters.Test2();
+            testingParamteters.Test3();
         }
     }
 }

@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace PassingParametersToMethod
 {
+    struct PersonStruct
+    {
+        public string name;
+        public string surname;
+        public int age;
+    }
+
+
     class TestingParamteters
     {
         #region Przekazywanie typów prostych
@@ -14,9 +22,9 @@ namespace PassingParametersToMethod
         {
             byte number = 15;
             Console.WriteLine("Zmienna number = " + number);
-            //ChangeValue(number);
+            ChangeValue(number);
             //ChangeValue(6);
-            ChangeValueV2(ref number);
+            //ChangeValueV2(ref number);
             //ChangeValueV2(ref 6); //BŁAD!!!!!!!!!
             Console.WriteLine("Zmienna number = " + number);
 
@@ -59,7 +67,9 @@ namespace PassingParametersToMethod
             Person person = new Person();
             person.ShowInfo();
 
-            GetPerson(person);
+            //GetPerson(person);
+            //GetPerson2(person);
+            GetPerson3(ref person);
 
             person.ShowInfo();
         }
@@ -69,6 +79,33 @@ namespace PassingParametersToMethod
             p.ShowInfo();
             p.Age = 40;
             p.ShowInfo();
+        }
+
+        private void GetPerson2(Person p)
+        {
+            p = new Person();
+            p.ShowInfo();
+            p.Age = 40;
+            p.ShowInfo();
+        }
+
+        private void GetPerson3(ref Person p)
+        {
+            p = new Person();
+            p.ShowInfo();
+            p.Age = 40;
+            p.ShowInfo();
+        }
+
+        #endregion
+
+        #region Przekazywanie struktur
+
+        public void Test3()
+        {
+            PersonStruct ps = new PersonStruct();
+            ps.name = "Adam";
+
         }
 
         #endregion
