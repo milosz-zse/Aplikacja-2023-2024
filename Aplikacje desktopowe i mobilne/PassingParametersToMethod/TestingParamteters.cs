@@ -106,6 +106,8 @@ namespace PassingParametersToMethod
             PersonStruct ps = new PersonStruct();
             ps.name = "Adam";
 
+
+
         }
 
         #endregion
