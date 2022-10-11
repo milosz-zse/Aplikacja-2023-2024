@@ -105,10 +105,18 @@ namespace PassingParametersToMethod
         {
             PersonStruct ps = new PersonStruct();
             ps.name = "Adam";
-
-
-
+            Console.WriteLine("Pole name w Test3 " + ps.name);
+            GetPresonStruct(ps);
+            Console.WriteLine("Pole name w Test3 " + ps.name);
         }
+
+        private void GetPresonStruct(PersonStruct ps)
+        {
+            Console.WriteLine("Pole name w GetPresonStruct " + ps.name);
+            ps.name = "Ewa";
+            Console.WriteLine("Pole name w GetPresonStruct " + ps.name);
+        }
+
 
         #endregion
     }
