@@ -7,27 +7,19 @@ using System.Threading.Tasks;
 namespace PolymorphismApp
 {
 
-    class Dog
+    class Dog : Animal
     {
-        private string name;
-        private byte age;
-
-        public Dog()
+        public Dog() //: base() - to jest domyslne
         {
             name = "Azor";
-            age = 10;
         }
 
-        public Dog(string name, byte age)
+        public Dog(string name, byte age) : base(name, age)
         {
-            this.name = name;
-            this.age = age;
         }
 
-        public Dog(Dog dogToCopy)
+        public Dog(Dog dogToCopy): base(dogToCopy)
         {
-            name = dogToCopy.name;
-            age = dogToCopy.age;
         }
 
         public void ShowInfo()
