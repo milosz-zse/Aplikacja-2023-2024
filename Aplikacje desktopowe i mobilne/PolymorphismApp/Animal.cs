@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PolymorphismApp
 {
-    class Animal
+    class Animal //: Object
     {
         protected string name;
         protected byte age;
