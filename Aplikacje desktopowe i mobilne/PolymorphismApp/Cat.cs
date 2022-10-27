@@ -11,34 +11,21 @@ DRY - don't repeat yourself
 
 namespace PolymorphismApp
 {
-    class Cat
+    class Cat : Animal
     {
-        private string name;
-        private byte age;
-
         public Cat()
         {
             name = "Puszek";
-            age = 10;
+            type = "Kot";
         }
 
-        public Cat(string name, byte age)
+        public Cat(string name, byte age) : base(name, age)
         {
-            this.name = name;
-            this.age = age;
+            type = "Kot";
         }
 
-        public Cat(Cat catToCopy)
+        public Cat(Cat catToCopy) : base(catToCopy)
         {
-            name = catToCopy.name;
-            age = catToCopy.age;
-        }
-
-        public void ShowInfo()
-        {
-            Console.WriteLine("***********************");
-            Console.WriteLine("Kot o imieniu " + name + " ma " + age + " lat");
-            Console.WriteLine("***********************");
         }
 
         public void Meow()

@@ -12,21 +12,16 @@ namespace PolymorphismApp
         public Dog() //: base() - to jest domyslne
         {
             name = "Azor";
+            type = "Pies";
         }
 
         public Dog(string name, byte age) : base(name, age)
         {
+            type = "Pies";
         }
 
         public Dog(Dog dogToCopy): base(dogToCopy)
         {
-        }
-
-        public void ShowInfo()
-        {
-            Console.WriteLine("***********************");
-            Console.WriteLine("Pies o imieniu " + name + " ma " + age + " lat");
-            Console.WriteLine("***********************");
         }
 
         public void Bark()
