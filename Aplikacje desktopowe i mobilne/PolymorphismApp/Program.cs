@@ -23,7 +23,11 @@ namespace PolymorphismApp
             ShowInfoForDog(firstDog);
             ShowInfoForCat(firstCat);
 
-            Animal animal = firstDog;
+            Animal animal;
+            if (new Random().Next() % 2 == 0)
+                animal = firstDog;
+            else
+                animal = firstCat;
             animal.ShowInfo();
 
             ShowInfoForAnimal(firstCat);
@@ -46,3 +50,29 @@ namespace PolymorphismApp
         }
     }
 }
+/*
+class Player
+{
+    public virtual void Ruch() { }
+}
+
+class Człowiek: Player
+{
+    public override void Ruch() { }
+}
+
+class Komputer : Player
+{
+    public override void Ruch() { }
+}
+
+Player[] tab = new Palyer[2];
+tab[0] = new Komputer();
+tab[1] = new Człowiek();
+
+while (true)
+{
+    tab[0].Ruch();
+    tab[1].Ruch();
+}
+*/
