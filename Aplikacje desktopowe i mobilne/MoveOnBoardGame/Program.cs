@@ -6,16 +6,13 @@ namespace MoveOnBoardGame
     {
         static void Main(string[] args)
         {
-            /*
-                - gracz
-                - plansza
-                - 
-
-
-             */
-
             Board board = new Board();
             board.Draw();
+
+            Player player = new Player();
+            while(true)
+                player.Move();
+
         }
     }
 }
