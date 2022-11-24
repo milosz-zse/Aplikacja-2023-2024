@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoveOnBoardGame.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace MoveOnBoardGame
         private int topCorner = 5;
         private int leftCorner = 5;
         private int height = 30;
-        private int width = 30;
+        private int width = 50;
         private ConsoleColor backGroundColor = ConsoleColor.DarkRed;
         private ConsoleColor foregroundColor = ConsoleColor.Yellow;
         private char borderChar = 'X';
@@ -58,18 +59,22 @@ namespace MoveOnBoardGame
             Console.ResetColor();
         }
 
-        public bool CollisionDetect(int x, int y)
+        public CollisionType CollisionDetect(int x, int y)
         {
-            if (y == leftCorner) // górna ściana
-                return true;
-            if (x == topCorner) //lewa ściana
-                return true;
-            if (y == height - 1 + leftCorner) //dolna ściana
-                return true;
-            if (x == width - 1 + topCorner) // prawa ściana
-                return true;
+            /*for (int i = 0; i < availableFieldsOnBoard.Count; i++)
+            {
+                if (availableFieldsOnBoard[i].X == x && availableFieldsOnBoard[i].Y == y)
+                    return false;
+            }*/
 
-            return false;
+            foreach (AvailableField field in availableFieldsOnBoard)
+            {
+                if (field.X == x && field.Y == y)
+                    return CollisionType.NoCollision;
+            }
+
+            //kolizja ze ścianą planszy
+            return CollisionType.BorderCollision;
         }
 
         private void CompleteAvailableFields()
