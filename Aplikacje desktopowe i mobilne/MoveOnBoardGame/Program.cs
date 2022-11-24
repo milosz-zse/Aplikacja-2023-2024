@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace MoveOnBoardGame
 {
@@ -9,9 +10,27 @@ namespace MoveOnBoardGame
             Board board = new Board();
             board.Draw();
 
-            Player player = new Player();
-            while(true)
-                player.Move();
+            AvailableField availableField = board.GetRandomAvailableField();
+
+            Player player = new Player(availableField.X, availableField.Y);
+
+            MoveDirection direction = MoveDirection.MOVE_RIGHT;
+
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    direction = (MoveDirection)Console.ReadKey(true).KeyChar;
+                }
+
+                player.Move(direction);
+                if (board.CollisionDetect(player.CurrX, player.CurrY))
+                {
+                    break;
+                }
+
+                Thread.Sleep(100);
+            }
 
         }
     }

@@ -8,14 +8,9 @@ namespace MoveOnBoardGame
 {
     class Player
     {
-        private ConsoleColor backGroundColor = ConsoleColor.DarkRed;
-        private ConsoleColor foregroundColor = ConsoleColor.Yellow;
+        private ConsoleColor backGroundColor = ConsoleColor.Cyan;
+        private ConsoleColor foregroundColor = ConsoleColor.Green;
         private char playerChar = 'O';
-
-        private const char moveUp = 'w';
-        private const char moveDown = 's';
-        private const char moveLeft = 'a';
-        private const char moveRight = 'd';
 
         private int currX = 1;
         private int currY = 1;
@@ -23,27 +18,43 @@ namespace MoveOnBoardGame
         private int prevX = 1;
         private int prevY = 1;
 
-        public Player()
+        public int CurrX
         {
+            get
+            {
+                return currX;
+            }
+        }
+
+        public int CurrY
+        {
+            get
+            {
+                return currY;
+            }
+        }
+
+        public Player(int startX, int startY)
+        {
+            currX = prevX = startX;
+            currY = prevY = startY;
             Draw();
         }
 
-        public void Move()
+        public void Move(MoveDirection direction)
         {
-            char presKey = Console.ReadKey(true).KeyChar;
-
-            switch (presKey)
+            switch (direction)
             {
-                case moveUp:
+                case MoveDirection.MOVE_UP:
                     currY--;
                     break;
-                case moveDown:
+                case MoveDirection.MOVE_DOWN:
                     currY++;
                     break;
-                case moveLeft:
+                case MoveDirection.MOVE_LEFT:
                     currX--;
                     break;
-                case moveRight:
+                case MoveDirection.MOVE_RIGHT:
                     currX++;
                     break;
                 default:
@@ -66,6 +77,8 @@ namespace MoveOnBoardGame
 
             prevX = currX;
             prevY = currY;
+
+            Console.ResetColor();
         }
 
     }
