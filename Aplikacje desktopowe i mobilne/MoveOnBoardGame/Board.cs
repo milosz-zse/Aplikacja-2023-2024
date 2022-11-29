@@ -11,8 +11,8 @@ namespace MoveOnBoardGame
     {
         private int topCorner = 5;
         private int leftCorner = 5;
-        private int height = 30;
-        private int width = 50;
+        private int height = 20;
+        private int width = 60;
         private ConsoleColor backGroundColor = ConsoleColor.DarkRed;
         private ConsoleColor foregroundColor = ConsoleColor.Yellow;
         private char borderChar = 'X';
@@ -27,6 +27,7 @@ namespace MoveOnBoardGame
         public void Draw()
         {
             Console.Clear();
+            Console.CursorVisible = false;
 
             Console.ForegroundColor = foregroundColor;
             Console.BackgroundColor = backGroundColor;
