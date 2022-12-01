@@ -107,7 +107,7 @@ namespace MoveOnBoardGame
         }
 
         private void GenerateRandomStoneObstacles()
-        {
+        { 
             int countOfStoneObstacles = (height * width) / percentOfStoneObstacles;
 
             Random random = new Random();
