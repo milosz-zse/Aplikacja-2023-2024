@@ -6,8 +6,11 @@ namespace TestCollections
     {
         static void Main(string[] args)
         {
-            ArrayTest arrayTest = new ArrayTest();
-            arrayTest.Test();
+            //ArrayTest arrayTest = new ArrayTest();
+            //arrayTest.Test();
+
+            ListTest listTest = new ListTest();
+            listTest.Test();
         }
     }
 }
