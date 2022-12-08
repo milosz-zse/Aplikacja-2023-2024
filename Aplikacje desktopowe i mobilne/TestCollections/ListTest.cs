@@ -41,8 +41,9 @@ namespace TestCollections
             Console.WriteLine();
 
             Console.WriteLine("Max w int'ach: " + MaxFromInts(listOfInts));
-            Console.WriteLine("Max w double'ach: " + MaxFromDouble(listOfDoubles));
-
+            Console.WriteLine("Max w int'ach: " + MaxFromAllTypes<int>(listOfInts));
+            Console.WriteLine("Max w double'ach: " + MaxFromDoubles(listOfDoubles));
+            Console.WriteLine("Max w double'ach: " + MaxFromAllTypes<double>(listOfDoubles));
         }
 
         private int MaxFromInts(List<int> list)
@@ -56,7 +57,7 @@ namespace TestCollections
             return max;
         }
 
-        private double MaxFromDouble(List<double> list)
+        private double MaxFromDoubles(List<double> list)
         {
             double max = list[0];
             foreach (double item in list)
@@ -67,5 +68,15 @@ namespace TestCollections
             return max;
         }
 
+        private T MaxFromAllTypes<T>(List<T> list)
+        {
+            T max = list[0];
+            foreach (T item in list)
+            {
+                if (item > max)
+                    max = item;
+            }
+            return max;
+        }
     }
 }
