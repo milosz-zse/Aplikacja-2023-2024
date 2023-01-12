@@ -9,8 +9,11 @@ namespace TestCollections
             //ArrayTest arrayTest = new ArrayTest();
             //arrayTest.Test();
 
-            ListTest listTest = new ListTest();
-            listTest.Test();
+            //ListTest listTest = new ListTest();
+            //listTest.Test();
+
+            PersonCollection personCollection = new PersonCollection();
+            personCollection.Test();
         }
     }
 }

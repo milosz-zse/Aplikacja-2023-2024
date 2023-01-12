@@ -42,13 +42,21 @@ namespace TestCollections
 
             Console.WriteLine("Max w int'ach: " + MaxFromInts(listOfInts));
             Console.WriteLine("Max w int'ach: " + MaxFromAllTypes<int>(listOfInts, CheckTwoInts));
-            Console.WriteLine("Max w int'ach: " + MaxFromAllTypes<int>(listOfInts, (int a, int b) =>
+            Console.WriteLine("Max w int'ach: " + MaxFromAllTypes(listOfInts, (int a, int b) =>
                                                                                     {
                                                                                         return a > b;
                                                                                     } ));
             Console.WriteLine("Max w double'ach: " + MaxFromDoubles(listOfDoubles));
             Console.WriteLine("Max w double'ach: " + MaxFromAllTypes<double>(listOfDoubles, CheckTwoDoubles));
-            Console.WriteLine("Max w double'ach: " + MaxFromAllTypes<double>(listOfDoubles, (a, b) => a > b ));
+            Console.WriteLine("Max w double'ach: " + MaxFromAllTypes(listOfDoubles, (a, b) => a > b ));
+
+
+            List<int> newList = CollectionRange<int>(listOfInts, a => a > 5);
+            newList = CollectionRange(listOfInts, a => a > 5 && a < 10);
+
+            newList = listOfInts.Where(x => x > 5 && x < 10).ToList<int>();
+            var newList2 = listOfDoubles.Where(x => x > 5 && x < 10).ToList();
+
         }
 
         private bool CheckTwoInts(int a, int b)
@@ -94,6 +102,17 @@ namespace TestCollections
                     max = item;
             }
             return max;
+        }
+
+        private List<T> CollectionRange<T>(List<T> list, Func<T, bool> check)
+        {
+            List<T> outList = new List<T>();
+            foreach (T item in list)
+            {
+                if (check(item))
+                    outList.Add(item);
+            }
+            return outList;
         }
 
     }
