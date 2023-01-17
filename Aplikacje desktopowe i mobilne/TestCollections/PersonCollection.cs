@@ -35,6 +35,14 @@ namespace TestCollections
                 Height = 172
             });
 
+            listOfPeople.Add(new Person()
+            {
+                Name = "Adam",
+                Surname = "Małysz",
+                Age = 15,
+                Height = 165
+            });
+
             Console.WriteLine("Wszystkie dane w kolekcji:");
             foreach (Person person in listOfPeople)
             {
@@ -53,8 +61,30 @@ namespace TestCollections
             Console.WriteLine("Pierwsza osoba na liście: " + firstOnList);
             Console.WriteLine();
 
-            Person firstPersonWidthHeightOdd = listOfPeople.FirstOrDefault(p=> p.Height % 2 == 1);
+            Person firstPersonWidthHeightOdd = listOfPeople.FirstOrDefault(p => p.Height % 2 == 1);
+            Console.WriteLine("Pierwsza osoba na liście z nieparzystym wzrostem: " + firstPersonWidthHeightOdd);
+            Console.WriteLine();
 
+            List<Person> peopleSortHeight = listOfPeople.OrderBy(p => p.Height).ToList();
+            Console.WriteLine("Posortowana lista wedłóg wzrostu");
+            foreach (Person person in peopleSortHeight)
+            {
+                Console.WriteLine(person);
+            }
+            Console.WriteLine();
+
+            List<Person> peopleSortHeightAndAge = listOfPeople
+                .OrderBy(p => p.Height)
+                .ThenByDescending(p => p.Age)
+                .ToList();
+            Console.WriteLine("Posortowana lista według wzrostu i wieku");
+            foreach (Person person in peopleSortHeightAndAge)
+            {
+                Console.WriteLine(person);
+            }
+            Console.WriteLine();
+
+            var x = listOfPeople.Where(p => p.Age >= 18).OrderBy(p => p.Height).FirstOrDefault();
 
         }
 
