@@ -13,16 +13,23 @@ namespace MoveOnBoardGame
         private int leftCorner = 5;
         private int height = 20;
         private int width = 60;
-        private ConsoleColor backGroundColor = ConsoleColor.DarkRed;
-        private ConsoleColor foregroundColor = ConsoleColor.Yellow;
+        private ConsoleColor borderBackgroundColor = ConsoleColor.DarkRed;
+        private ConsoleColor borderForegroundColor = ConsoleColor.Yellow;
+
+        private ConsoleColor stoneBackgroundColor = ConsoleColor.DarkMagenta;
+        private ConsoleColor stoneForegroundColor = ConsoleColor.Green;
+
         private char borderChar = 'X';
-        private int percentOfStoneObstacles = 6;
+        private double percentOfStoneObstacles = 0.02;
+
+        private char stoneChar = 'S';
 
         private List<AvailableField> availableFieldsOnBoard = new List<AvailableField>();
 
         public Board()
         {
             CompleteAvailableFields();
+            GenerateRandomStoneObstacles();
         }
 
         public void Draw()
@@ -30,8 +37,8 @@ namespace MoveOnBoardGame
             Console.Clear();
             Console.CursorVisible = false;
 
-            Console.ForegroundColor = foregroundColor;
-            Console.BackgroundColor = backGroundColor;
+            Console.ForegroundColor = borderForegroundColor;
+            Console.BackgroundColor = borderBackgroundColor;
 
             //górna krawędź
             Console.SetCursorPosition(topCorner, leftCorner);
@@ -58,6 +65,18 @@ namespace MoveOnBoardGame
             {
                 Console.Write(borderChar);
             }
+
+            //Ryswowanie kamieni
+            Console.ForegroundColor = stoneForegroundColor;
+            Console.BackgroundColor = stoneBackgroundColor;
+
+            List<AvailableField> listOfStone = availableFieldsOnBoard.Where(af => af.TypeOfObstacle == TypeOfObstacle.Stone).ToList();
+            foreach (AvailableField item in listOfStone)
+            {
+                Console.SetCursorPosition(item.X, item.Y);
+                Console.Write(stoneChar);
+            }
+
             Console.ResetColor();
         }
 
@@ -108,14 +127,14 @@ namespace MoveOnBoardGame
 
         private void GenerateRandomStoneObstacles()
         { 
-            int countOfStoneObstacles = (height * width) / percentOfStoneObstacles;
+            int countOfStoneObstacles = (int)(height * width * percentOfStoneObstacles);
 
             Random random = new Random();
             for (int i = 0; i < countOfStoneObstacles; i++)
             {
                 int randomField = random.Next(availableFieldsOnBoard.Count);
-                if (availableFieldsOnBoard[i].TypeOfObstacle == TypeOfObstacle.None)
-                    availableFieldsOnBoard[i].TypeOfObstacle = TypeOfObstacle.Stone;
+                if (availableFieldsOnBoard[randomField].TypeOfObstacle == TypeOfObstacle.None)
+                    availableFieldsOnBoard[randomField].TypeOfObstacle = TypeOfObstacle.Stone;
             }
         }
 
