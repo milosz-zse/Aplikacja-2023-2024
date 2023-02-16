@@ -9,6 +9,7 @@ namespace MoveOnBoardGame.Enums
     enum CollisionType
     {
         NoCollision,
-        BorderCollision
+        BorderCollision,
+        StoneCollision
     }
 }

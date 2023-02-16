@@ -82,20 +82,16 @@ namespace MoveOnBoardGame
 
         public CollisionType CollisionDetect(int x, int y)
         {
-            /*for (int i = 0; i < availableFieldsOnBoard.Count; i++)
-            {
-                if (availableFieldsOnBoard[i].X == x && availableFieldsOnBoard[i].Y == y)
-                    return false;
-            }*/
+            AvailableField availableField = availableFieldsOnBoard
+                                            .FirstOrDefault(af => af.X == x && af.Y == y);
 
-            foreach (AvailableField field in availableFieldsOnBoard)
-            {
-                if (field.X == x && field.Y == y)
-                    return CollisionType.NoCollision;
-            }
+            if (availableField == null)
+                return CollisionType.BorderCollision;
 
-            //kolizja ze ścianą planszy
-            return CollisionType.BorderCollision;
+            if (availableField.TypeOfObstacle == TypeOfObstacle.Stone)
+                return CollisionType.StoneCollision;
+
+            return CollisionType.NoCollision;
         }
 
         private void CompleteAvailableFields()
@@ -130,11 +126,16 @@ namespace MoveOnBoardGame
             int countOfStoneObstacles = (int)(height * width * percentOfStoneObstacles);
 
             Random random = new Random();
-            for (int i = 0; i < countOfStoneObstacles; i++)
+
+            List<AvailableField> listForStone = availableFieldsOnBoard
+                .Where(af => af.TypeOfObstacle == TypeOfObstacle.None)
+                .OrderBy(af => random.Next())
+                .Take(countOfStoneObstacles)
+                .ToList();
+
+            foreach (var item in listForStone)
             {
-                int randomField = random.Next(availableFieldsOnBoard.Count);
-                if (availableFieldsOnBoard[randomField].TypeOfObstacle == TypeOfObstacle.None)
-                    availableFieldsOnBoard[randomField].TypeOfObstacle = TypeOfObstacle.Stone;
+                item.TypeOfObstacle = TypeOfObstacle.Stone;
             }
         }
 

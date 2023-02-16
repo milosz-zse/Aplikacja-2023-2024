@@ -25,7 +25,9 @@ namespace MoveOnBoardGame
                 }
 
                 player.Move(direction);
-                if (board.CollisionDetect(player.CurrX, player.CurrY) == CollisionType.BorderCollision)
+                CollisionType collisionType = board.CollisionDetect(player.CurrX, player.CurrY);
+                if (collisionType == CollisionType.BorderCollision
+                    || collisionType == CollisionType.StoneCollision)
                 {
                     break;
                 }
