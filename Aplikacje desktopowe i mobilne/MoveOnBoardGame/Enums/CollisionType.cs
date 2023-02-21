@@ -10,6 +10,7 @@ namespace MoveOnBoardGame.Enums
     {
         NoCollision,
         BorderCollision,
-        StoneCollision
+        StoneCollision,
+        FruitCollision
     }
 }

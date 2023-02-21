@@ -9,6 +9,7 @@ namespace MoveOnBoardGame.Enums
     enum TypeOfObstacle
     {
         None,
-        Stone
+        Stone,
+        Fruit
     }
 }

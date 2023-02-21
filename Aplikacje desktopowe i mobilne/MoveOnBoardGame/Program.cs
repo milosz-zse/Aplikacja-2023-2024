@@ -31,6 +31,10 @@ namespace MoveOnBoardGame
                 {
                     break;
                 }
+                if (collisionType == CollisionType.FruitCollision)
+                {
+
+                }
 
                 Thread.Sleep(100);
             }
