@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace SchoolApp.Database
 {
+    //add-migration FirstMigration -outputdir Database\Migrations
+    //update-database
     class SchoolDatabaseContext : DbContext
     {
         public DbSet<SchoolClass> SchoolClasses { get; set; }
