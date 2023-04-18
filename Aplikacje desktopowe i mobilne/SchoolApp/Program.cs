@@ -7,8 +7,8 @@ namespace SchoolApp
     {
         static void Main(string[] args)
         {
-            SchoolDatabaseContext schoolDatabaseContext = new SchoolDatabaseContext();
-
+            School school = new School();
+            school.Run();
         }
     }
 }
