@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleCalculatorMauiApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout 
+                Spacing="10" 
+                BackgroundColor="DimGray">
+            <StackLayout BackgroundColor="SlateGrey" Orientation="Horizontal" HorizontalOptions="Center" >
+                <Label Text=" pierwsza liczba:" FontSize="19" VerticalOptions="Center"> </Label>
+                <Entry Text="{Binding FirstNumberEteryBinding}"  HorizontalOptions="FillAndExpand" Placeholder="wpisz tu  pierwszą licze" x:Name="firstNumberEtery"/>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="SlateGrey" Orientation="Horizontal" HorizontalOptions="Center" >
+                <Label Text=" druga liczba:" FontSize="19" VerticalOptions="Center" > </Label>
+                <Entry Text="{Binding SecoundNumberEteryBinding}" HorizontalOptions="FillAndExpand" Placeholder="wpisz tu  pierwsza licze" x:Name="secoundNumberEtery "/>
+            </StackLayout>
+            <Label
+                HorizontalOptions="Center" 
+                Text="Opcje"
+                FontFamily="Times new roman"
+                BackgroundColor="LightSteelBlue"
+               />
+
+            <StackLayout Orientation="Horizontal" Spacing="100" HorizontalOptions="Center"  >
+                
+                <RadioButton FontSize="20" Content="+" x:Name="operationAddRadioButton"/>
+                <RadioButton   FontSize="20" Content="-" x:Name="operationSubRadioButton"/>
+
+                <RadioButton  FontSize="20" Content="*" x:Name="operationMulRadioButton"/>
+                <RadioButton  FontSize="20" Content="/" x:Name="operationDivRadioButton"/>
+            </StackLayout>
+            <Button 
+                Text="Oblicz" 
+                HorizontalOptions="Center" 
+                WidthRequest="200" 
+                Clicked="Button_Clicked"
+                />
+            
+
+            <Label Text="{Binding ProcessedMessage}" x:Name="resultLabel" HorizontalOptions="Center"  ></Label>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

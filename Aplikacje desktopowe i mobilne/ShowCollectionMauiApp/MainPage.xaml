@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShowCollectionMauiApp.MainPage"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}">
+
+    <StackLayout >
+
+        <Label Text="WYBIRZ Z LISTY:" />
+
+        <Label FontSize="30" >
+            <Label.Text>wybierz z listy </Label.Text>
+        </Label>
+
+        <Picker >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String> bannan</x:String>
+                    <x:String>apple</x:String>
+                    <x:String>small orange</x:String>
+                    <x:String>normal orange</x:String>
+                    <x:String>red orange</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+            
+        </Picker>
+
+        <Picker ItemsSource="{Binding FruitsCollectons}"  SelectedItem ="{Binding SelcetedFruit}"/>
+
+        <Button Text="pobierz dane"
+                HorizontalOptions="Center"
+                Margin="0, 10, 0, 10"
+                Clicked="Button_Clicked"/>
+
+        <Label Text="{Binding SelectedFruitMessage}"/> 
+
+
+    </StackLayout>
+
+</ContentPage>
