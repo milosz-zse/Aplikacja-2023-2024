@@ -1,8 +1,10 @@
-﻿namespace ShowCollectionMauiApp
+﻿using System.Collections.ObjectModel;
+
+namespace ShowCollectionMauiApp
 {
     public partial class MainPage : ContentPage
     {
-        public List<string> FruitsCollectons { get; set; }
+        public ObservableCollection<string> FruitsCollectons { get; set;  }
 
         public string SelcetedFruit { get; set; }
 
@@ -13,13 +15,14 @@
             get { return selectedFruitMessage; }
             set { selectedFruitMessage = value; OnPropertyChanged(); }
         }
+        public string NewFruitName { get; set; }
 
 
 
 
         public MainPage()
         {
-            FruitsCollectons = new List<string>();
+            FruitsCollectons = new ObservableCollection<string>();
             FruitsCollectons.Add("BANNANAN NAN");
             FruitsCollectons.Add("APPLES");
             FruitsCollectons.Add("orange");
@@ -32,6 +35,12 @@
         private void Button_Clicked(object sender, EventArgs e)
         {
             SelectedFruitMessage = "wybrany owoc" + SelcetedFruit ;
+        }
+
+        private void Button_New_Fruit(object sender, EventArgs e)
+        {
+            FruitsCollectons.Add(NewFruitName);
+           
         }
     }
 
