@@ -1,0 +1,22 @@
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\bin\Debug\net8.0\konsolowa.exe
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\bin\Debug\net8.0\konsolowa.deps.json
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\bin\Debug\net8.0\konsolowa.runtimeconfig.json
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\bin\Debug\net8.0\konsolowa.dll
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\bin\Debug\net8.0\konsolowa.pdb
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\konsolowa.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\konsolowa.AssemblyInfoInputs.cache
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\konsolowa.AssemblyInfo.cs
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\konsolowa.csproj.CoreCompileInputs.cache
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\konsolowa.dll
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\refint\konsolowa.dll
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\konsolowa.pdb
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\konsolowa.genruntimeconfig.cache
+C:\Users\Sala213\source\repos\konsolowa\konsolowa\obj\Debug\net8.0\ref\konsolowa.dll
+C:\4bmichta\Aplikacja-2023-2024\egzamin paz 2024\KONSOLOWA\konsolowa\obj\Debug\net8.0\konsolowa.GeneratedMSBuildEditorConfig.editorconfig
+C:\4bmichta\Aplikacja-2023-2024\egzamin paz 2024\KONSOLOWA\konsolowa\obj\Debug\net8.0\konsolowa.AssemblyInfoInputs.cache
+C:\4bmichta\Aplikacja-2023-2024\egzamin paz 2024\KONSOLOWA\konsolowa\obj\Debug\net8.0\konsolowa.AssemblyInfo.cs
+C:\4bmichta\Aplikacja-2023-2024\egzamin paz 2024\KONSOLOWA\konsolowa\obj\Debug\net8.0\konsolowa.csproj.CoreCompileInputs.cache
+C:\4bmichta\Aplikacja-2023-2024\egzamin paz 2024\KONSOLOWA\konsolowa\obj\Debug\net8.0\konsolowa.sourcelink.json
+C:\4bmichta\Aplikacja-2023-2024\egzamin paz 2024\KONSOLOWA\konsolowa\obj\Debug\net8.0\konsolowa.dll
+C:\4bmichta\Aplikacja-2023-2024\egzamin paz 2024\KONSOLOWA\konsolowa\obj\Debug\net8.0\refint\konsolowa.dll
+C:\4bmichta\Aplikacja-2023-2024\egzamin paz 2024\KONSOLOWA\konsolowa\obj\Debug\net8.0\konsolowa.pdb

@@ -1,0 +1,4 @@
+nazwa systemu operacyjnego : windows 10
+maui C#
+emulator pixel 5 aip 34
+C#
